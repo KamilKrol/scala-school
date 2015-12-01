@@ -30,7 +30,7 @@ object Main6 {
 
   def caseClassPatternMatching(calc: Calculator) = calc match {
     case Calculator("HP", model) => "Model '" + model + "' from HP"
-    case Calculator(_, model) => "Model '" + model + "' from different manufacturer"
+    case c@Calculator(_, model) => "Model '" + c.model + "' from different manufacturer"
   }
 
 }
