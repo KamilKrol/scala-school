@@ -16,6 +16,9 @@ object Main6 {
     val mappedList = list.map(matchFunction)
     println(list)
     println(mappedList)
+
+    val caseClassMatchingList = list.map(caseClassPatternMatching)
+    println(caseClassMatchingList)
   }
 
   def matchFunction(calc: Calculator) = calc match {
@@ -23,6 +26,11 @@ object Main6 {
     case _ if calc.brand == "HP" && calc.model == "48G" => "scientific"
     case _ if calc.brand == "HP" && calc.model == "30B" => "business"
     case _ => "unknown = " + calc
+  }
+
+  def caseClassPatternMatching(calc: Calculator) = calc match {
+    case Calculator("HP", model) => "Model '" + model + "' from HP"
+    case Calculator(_, model) => "Model '" + model + "' from different manufacturer"
   }
 
 }
