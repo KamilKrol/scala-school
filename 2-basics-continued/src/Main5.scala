@@ -6,12 +6,27 @@
 object Main5 {
 
   def main(args: Array[String]): Unit = {
-    val times = 1
-    val text = times match {
+    val list = List(1, 2, 3, 4, 5)
+    val strings1 = list.map(matchFunction1)
+    val strings2 = list.map(matchFunction2)
+    println(list)
+    println(strings1)
+    println(strings2)
+  }
+
+  def matchFunction1(value: Int): String = {
+    value match {
       case 1 => "one"
       case 2 => "two"
       case _ => "unknown"
     }
-    println(text)
+  }
+
+  def matchFunction2(value: Int): String = {
+    value match {
+      case i if i == 1 => "one 1"
+      case i if i == 2 => "two 2"
+      case unknown => "unknown " + unknown
+    }
   }
 }
