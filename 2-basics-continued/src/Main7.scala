@@ -19,7 +19,7 @@ object Main6 {
     println("Result: " + result)
   }
 
-  def divide(a: Int, b: Int): Double {
+  def divide(a: Int, b: Int): Double = {
     a / b
   }
 
