@@ -4,7 +4,19 @@
 object Main1 {
 
   def main(args: Array[String]): Unit = {
-    println("xxx")
+
+    val name = "Kamil"
+    println(f(g(name)))
+
+    val fComposeG = f _ compose g _
+    println(fComposeG(name))
+
+    val fAndThenG = f _ andThen g _
+    println(fAndThenG(name))
   }
+
+  def f(s: String) = "f(" + s + ")"
+
+  def g(s: String) = "g(" + s + ")"
 
 }
