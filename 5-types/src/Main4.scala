@@ -8,6 +8,9 @@ object Main4 {
     val chicken = new Chicken()
     val duck = new Duck()
 
+    println(getTweet(chicken))
+    println(getTweet(duck))
+
   }
 
   class Animal {
